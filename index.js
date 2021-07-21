@@ -75,7 +75,7 @@ function enemy(car) {
 }
 // Arrow keys functioning and score updating
 
-function gamePlay() 
+function gamePlay() {
     // console.log('hey i am clicked');
     let car = document.querySelector('.car');
     let road = gameArea.getBoundingClientRect();
