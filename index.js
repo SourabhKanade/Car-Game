@@ -46,7 +46,7 @@ function runlines() {
         item.style.top = item.y + "px";
     })
 }
-
+// if players car collide then stop game
 function endgame() {
     player.start = false;
     startScreen.classList.remove('hide');
@@ -57,6 +57,7 @@ function endgame() {
 function enemy(car) {
     let enemy = document.querySelectorAll('.enemy');
 
+    //for detecting collition of 2 cars
     enemy.forEach(function (item) {
         if (isCollide(car, item)) {
             // console.log("Boom");
@@ -74,7 +75,7 @@ function enemy(car) {
 }
 // Arrow keys functioning and score updating
 
-function gamePlay() {
+function gamePlay() 
     // console.log('hey i am clicked');
     let car = document.querySelector('.car');
     let road = gameArea.getBoundingClientRect();
@@ -110,7 +111,7 @@ function start() {
     player.start = true;
     window.requestAnimationFrame(gamePlay);  // this method is used for printing a object(gamePlay) infinite times by calling back itself.
 
-     // created a new lines div inside a existing gameArea div using gameArea.AppendChild, with some CSS including.
+     // created a new 'lines' div inside a existing 'gameArea' div using gameArea.AppendChild, with some CSS including for center road lines.
     for (x = 0; x < 5; x++) {
         let roadLine = document.createElement('div');
         roadLine.setAttribute('class', 'lines');
@@ -141,7 +142,6 @@ function start() {
         enemycar.style.left = Math.floor(Math.random() * 350) + "px";
         gameArea.appendChild(enemycar);
     }
-
 }
 // generating randon colors to enemy cars using [Math.floor and .tostring] methods
 function randomColor() {
